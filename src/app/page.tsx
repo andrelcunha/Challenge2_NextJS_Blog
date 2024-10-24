@@ -1,3 +1,4 @@
+import { PostCard } from "@/components/post-card";
 import { Post } from "@/models";
 import Link from "next/link";
 
@@ -11,17 +12,19 @@ async function getPosts(): Promise<Post[]> {
 export default async function Home() {
   const posts = await getPosts();
   return (
-    <main className="">
-      <h1>Next.js Blog</h1>
-      <p>FullCycle's Imersion Challenge #2</p>
-      <div>
-        {posts.map((post: Post) => (
-          <div key={post.id}>
-            <Link href={`/posts/${post.id}`} className="">
-            <h2>{post.title}</h2>
-            </Link>
-          </div>
-        ))}
+    <main className="container mx-auto px-4 py-12">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-2 text-center text-4xl font-bold tracking-tight">
+          <h1>My Next.js Blog</h1>
+        </div>
+        <div className="mb-12 text-center text-lg text-secondary">
+          <p>FullCycle's Imersion Challenge #2</p>
+        </div>
+        <div className="grid gap-4">
+          {posts.map((post: Post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </div>
       </div>
     </main>
   );

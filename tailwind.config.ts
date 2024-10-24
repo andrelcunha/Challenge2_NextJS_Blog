@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
-import  colors, { gray } from "tailwindcss/colors";
+
 
 const config: Config = {
   content: [
@@ -10,29 +10,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      lineHeight: {
-        11: '2.75rem',
-        12: '3rem',
-        13: '3.25rem',
-        14: '3.5rem',
-      },
-      fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
-      },
       colors: {
-        primary: colors.pink,
-        secondary: colors.gray,        
-      },      
-      borderColor: {
-        primary: "#e6e6e6",
-        secondary: "e6e6e6",
+        primary: "#fff",
+        secondary: "#333",   
       },
-      zIndex: {
-        60: '60',
-        70: '70',
-        80: '80',
+      textColor: {
+        primary: "#09090B",
+        secondary: "#666",
+        tertiary: "#71717A",
       },
-
+      backgroundColor: {
+        primary: "#fff",
+      },
     },
   },
   plugins: [],
