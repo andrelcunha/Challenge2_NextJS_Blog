@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
+import  colors, { gray } from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -8,11 +10,29 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      lineHeight: {
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
       },
+      fontFamily: {
+        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+      },
+      colors: {
+        primary: colors.pink,
+        secondary: colors.gray,        
+      },      
+      borderColor: {
+        primary: "#e6e6e6",
+        secondary: "e6e6e6",
+      },
+      zIndex: {
+        60: '60',
+        70: '70',
+        80: '80',
+      },
+
     },
   },
   plugins: [],
